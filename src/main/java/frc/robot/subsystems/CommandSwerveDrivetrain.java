@@ -36,7 +36,6 @@ public class CommandSwerveDrivetrain extends SwerveDrivetrain implements Subsyst
 
     private SwerveDrivePoseEstimator odometry;
 
-
     /* Blue alliance sees forward as 0 degrees (toward red alliance wall) */
     private final Rotation2d BlueAlliancePerspectiveRotation = Rotation2d.fromDegrees(0);
     /* Red alliance sees forward as 180 degrees (toward blue alliance wall) */
@@ -127,8 +126,11 @@ public class CommandSwerveDrivetrain extends SwerveDrivetrain implements Subsyst
     }
 
     public SwerveModulePosition[] getModulePositions() {
-        // TODO: Get the module positions from the drivetrain
-        return null;
-    }
-
+        SwerveModulePosition[] positions = new SwerveModulePosition[4];
+        for (int i = 0; i < 4; i++) {
+            SwerveModule module = getModule(i);
+            positions[i] = module.getPosition(true); // True to refresh the signal before reading the position
+        }
+        return positions;
+    }    
 }
