@@ -121,5 +121,9 @@ public class LimelightOdom {
      */
     public void updateDashboard() {
         SmartDashboard.putNumber("Limelight Area", LimelightHelpers.getTA(LIMELIGHT_NAME));
+        SmartDashboard.putBoolean("Ignore Limelight", ignoreLimelight);
+        SmartDashboard.putNumber("Limelight TX", LimelightHelpers.getTX(LIMELIGHT_NAME));
+        SmartDashboard.putNumber("Limelight TY", LimelightHelpers.getTY(LIMELIGHT_NAME));
+        SmartDashboard.putNumber("Limelight Target Count", LimelightHelpers.getTargetCount(LIMELIGHT_NAME));
     }
 }
