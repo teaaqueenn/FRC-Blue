@@ -132,6 +132,8 @@ public class CommandSwerveDrivetrain extends SwerveDrivetrain implements Subsyst
         limelightOdom.updateDashboard();
     }
 
+    // Getters and Setters start here : 
+
     /**
      * Gets the pose estimator.
      *

@@ -125,5 +125,11 @@ public class LimelightOdom {
         SmartDashboard.putNumber("Limelight TX", LimelightHelpers.getTX(LIMELIGHT_NAME));
         SmartDashboard.putNumber("Limelight TY", LimelightHelpers.getTY(LIMELIGHT_NAME));
         SmartDashboard.putNumber("Limelight Target Count", LimelightHelpers.getTargetCount(LIMELIGHT_NAME));
+
+        Pose2d robotPose = odometry.getEstimatedPosition();  // Assuming you have an odometry object
+        SmartDashboard.putNumber("Robot X Position", robotPose.getX());
+        SmartDashboard.putNumber("Robot Y Position", robotPose.getY());
+        SmartDashboard.putNumber("Robot Heading (in degrees)", robotPose.getRotation().getDegrees()); 
+
     }
 }
